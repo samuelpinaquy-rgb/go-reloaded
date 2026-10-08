@@ -1,1 +1,6 @@
-Simply add 66 and 2.
+Simply add 66 and 2. BONJOUR tout le monde.
+ceci est un test POUR Verifier le fonctionnement. 
+j'ai 16 et 5. 
+voici une phrase, avec une virgule; et une ponctuation! 
+voici un mot tres interessant. 
+orange devient an elephant et an apple.

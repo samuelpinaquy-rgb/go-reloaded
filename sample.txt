@@ -1,1 +1,6 @@
-Simply add 42 (hex) and 10 (bin).
+Simply add 42 (hex) and 10 (bin). bonjour (up) tout le monde.
+ceci est un TEST (low) POUR verifier (cap) le fonctionnement. 
+j'ai 10 (hex) et 101 (bin). 
+voici une phrase,avec une virgule;et une ponctuation! 
+voici un mot tres interessant. 
+orange devient a elephant et a apple.
