@@ -13,7 +13,7 @@ import (
 func main() {
 	if len(os.Args) != 3 {
 		os.Stdout.WriteString("Usage: go run . input.txt output.txt\n")
-		return
+		os.Exit(1)
 	}
 
 	inputFile := os.Args[1]
@@ -22,7 +22,7 @@ func main() {
 	content, err := os.ReadFile(inputFile)
 	if err != nil {
 		os.Stderr.WriteString("Erreur lors de la lecture du fichier : " + err.Error() + "\n")
-		return
+		os.Exit(1)
 	}
 
 	text := string(content)
@@ -34,7 +34,7 @@ func main() {
 
 	if err := os.WriteFile(outputFile, []byte(text), 0644); err != nil {
 		os.Stderr.WriteString("Erreur lors de la création du fichier : " + err.Error() + "\n")
-		return
+		os.Exit(1)
 	}
 
 	os.Stdout.WriteString(text + "\n")
@@ -190,6 +190,10 @@ func convertCase(text string) string {
 // Elle renvoie le mode demandé, le nombre de mots à transformer, la ponctuation éventuelle
 // et true si la balise est valide. Pour une balise inconnue ou mal formée, elle renvoie false.
 func caseMarker(word string) (string, int, string, bool) {
+	if !strings.HasPrefix(word, "(") {
+		return "", 0, "", false
+	}
+
 	end := strings.Index(word, ")")
 	if end == -1 {
 		return "", 0, "", false
@@ -226,7 +230,8 @@ func capitalize(word string) string {
 	if word == "" {
 		return word
 	}
-	return strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
+	letters := []rune(word)
+	return strings.ToUpper(string(letters[0])) + strings.ToLower(string(letters[1:]))
 }
 
 // formatApostrophes enlève les espaces entre les apostrophes simples appariées
@@ -370,4 +375,20 @@ func convertArticle(text string) string {
 	}
 	result.WriteString(separators[len(words)])
 	return result.String()
+}
+func splitWordsAndSeparators(text string) (words, separators []string) {
+	words = strings.Fields(text)
+	if len(words) == 0 {
+		return
+	}
+
+	separators = make([]string, len(words)+1)
+	position := 0
+	for i, word := range words {
+		start := position + strings.Index(text[position:], word)
+		separators[i] = text[position:start]
+		position = start + len(word)
+	}
+	separators[len(words)] = text[position:]
+	return
 }

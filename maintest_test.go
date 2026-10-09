@@ -131,6 +131,16 @@ func TestConvertCase(t *testing.T) {
 			input: "No case changes here.",
 			want:  "No case changes here.",
 		},
+		{
+			name:  "do not treat a word ending in up parenthesis as a marker",
+			input: "hello cup)",
+			want:  "hello cup)",
+		},
+		{
+			name:  "capitalize a word beginning with an accented letter",
+			input: "éCOLE (cap)",
+			want:  "École",
+		},
 	}
 
 	for _, test := range tests {

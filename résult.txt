@@ -3,4 +3,9 @@ ceci est un test POUR Verifier le fonctionnement.
 j'ai 16 et 5. 
 voici une phrase, avec une virgule; et une ponctuation! 
 voici un mot tres interessant. 
-orange devient an elephant et an apple.
+orange devient an elephant et an apple (up, 100).
+BONJOUR ceci est un test POUR Verifier le fonctionnement.
+PREMIER DEUX trois quatre Bonjour Monde 
+nombres: 26, 5, 47! ponctuation,
+virgule; point: exclamation! interrogation? 'bonjour' j' aime l' informatique.
+an apple, a banana, an orange, An elephant, an house, An University. (hex) (bin) MOT! dernier test...

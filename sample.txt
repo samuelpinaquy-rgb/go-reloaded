@@ -3,4 +3,10 @@ ceci est un TEST (low) POUR verifier (cap) le fonctionnement.
 j'ai 10 (hex) et 101 (bin). 
 voici une phrase,avec une virgule;et une ponctuation! 
 voici un mot tres interessant. 
-orange devient a elephant et a apple.
+orange devient a elephant et a apple (up,100).
+bonjour (up) ceci est un TEST (low) POUR verifier (cap) le fonctionnement.
+premier DEUX (up, 2) trois QUATRE (low, 2) BONJOUR MONDE (cap, 2) 
+nombres: 1A (hex), 101 (bin), 2f (hex)! ponctuation ,
+virgule;point:exclamation!interrogation? ' bonjour ' j' aime l' informatique.
+a apple, a banana, a orange, A elephant, a house, A university.
+(up) (low) (cap) (hex) (bin) mot (up)! dernier test...
