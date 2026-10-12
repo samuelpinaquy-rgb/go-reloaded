@@ -329,8 +329,7 @@ func trimTrailingWhitespace(text *strings.Builder) {
 }
 
 // convertArticle transforme l'article anglais "a" en "an" devant une voyelle ou h.
-// Elle conserve la majuscule de "A", les signes de ponctuation après l'article
-// et les séparateurs présents entre les mots.
+// Elle conserve la majuscule de "A", les signes de ponctuation après l'article.
 func convertArticle(text string) string {
 	words := strings.Fields(text)
 	if len(words) < 2 {
@@ -376,6 +375,11 @@ func convertArticle(text string) string {
 	result.WriteString(separators[len(words)])
 	return result.String()
 }
+
+// splitWordsAndSeparators divise le texte en mots et séparateurs.
+// Elle renvoie deux tranches : la première contient les mots, la seconde les séparateurs.
+// Les séparateurs incluent les espaces, retours à la ligne et ponctuation entre les mots,
+// ainsi que le texte avant le premier mot et après le dernier mot.
 func splitWordsAndSeparators(text string) (words, separators []string) {
 	words = strings.Fields(text)
 	if len(words) == 0 {
